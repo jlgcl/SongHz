@@ -1,0 +1,47 @@
+{
+  "name": "songhz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=SongHz:* npm run devstart"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlgcl/SongHz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlgcl/SongHz/issues"
+  },
+  "homepage": "https://github.com/jlgcl/SongHz#readme",
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "debug": "^4.2.0",
+    "express": "^4.17.1",
+    "express-router": "0.0.1",
+    "express-validator": "^6.6.1",
+    "http": "0.0.1-security",
+    "http-errors": "^1.8.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.4",
+    "pg": "^8.4.0"
+  }
+}
