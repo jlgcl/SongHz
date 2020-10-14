@@ -1,0 +1,79 @@
+@font-face {
+    font-family: logo;
+    src: url("../assets/Pacifico-Regular.ttf");
+}
+
+@font-face {
+    font-family: nav;
+    src: url("../assets/Oswald-VariableFont_wght.ttf");
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    height: 56px;
+    top: 0;
+    left: 0;
+    background-color: rgba(72, 72, 77, 0.3);
+    z-index: 1;
+}
+
+.navbar_navigation {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.navbar_logo {
+    font-family: logo;
+    margin-left: 1rem;
+}
+
+.navbar_logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.navbar_navigation-items a {
+    font-family: nav;
+    color: white;
+    text-decoration: none;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.navbar_navigation-items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar_navigation-items li {
+    padding:0 0.5rem;
+}
+
+.navbar_navigation-items a:hover, .navbar_navigation-items:active {
+    color: #fa923f;
+}
+
+/* Responsive for non-drawer items for mobile */
+@media (max-width: 768px) {
+    .navbar_navigation-items {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar_toggle-button {
+        display: none;
+    };
+
+    .navbar_logo {
+        margin-left: 0;
+    }
+}

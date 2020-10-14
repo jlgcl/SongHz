@@ -1,0 +1,53 @@
+@font-face {
+    font-family: nav;
+    src: url("../assets/Oswald-VariableFont_wght.ttf");
+}
+
+.drawer { 
+    height: 100%;
+    background-color: rgba(50, 50, 51, 0.9);
+    box-shadow: 1px 0 7px rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    max-width: 400px;
+    z-index: 200;
+    transform: translateX(-100%); /* closed position */
+    transition: transform 0.3s ease-out;
+}
+
+/* for 'drawer open' class */
+.drawer.open {
+    transform: translateX(0);   /* Normal position */
+}
+
+.drawer ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.drawer li {
+    margin: 1rem 0;
+}
+
+.drawer a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: nav;
+}
+
+.drawer a:hover, .drawer a:active {
+    color: #fa923f;
+}
+
+/* Responsive for drawer for desktop */
+@media (min-width: 769px) {
+    .drawer {
+        display: none;
+    }
+}

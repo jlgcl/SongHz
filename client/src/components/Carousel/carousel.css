@@ -1,0 +1,40 @@
+.carousel {
+  width: 100vw;
+  height: 94vh;
+  background-color: blue; }
+
+.slick-prev {
+  left: 100px;
+  z-index: 1; }
+
+.slick-next {
+  right: 100px;
+  z-index: 1; }
+
+.slick-slide {
+  position: relative; }
+
+.slick-dots {
+  bottom: 50px; }
+
+h3 {
+  position: absolute;
+  color: white;
+  bottom: 130px;
+  left: 43%;
+  z-index: 1; }
+
+img {
+  display: block;
+  margin: auto;
+  width: 100vw;
+  height: 94vh;
+  object-fit: cover; }
+
+.artist1 {
+  background-image: url("../assets/bts2.png");
+  background-size: cover;
+  background-color: #ca8994;
+  background-repeat: no-repeat; }
+
+/*# sourceMappingURL=carousel.css.map */

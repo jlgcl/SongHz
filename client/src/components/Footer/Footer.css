@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    height: 6vh;
+    background: black;
+}
+
+.links {
+    color: white;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.message {
+    color: white;
+}
