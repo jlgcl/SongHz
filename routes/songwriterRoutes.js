@@ -4,7 +4,9 @@ const pool = require('../db/index')
 
 router.get('/songwriter', async (req, res) => {
     try {
-        const { rows } = await pool.query('SELECT * FROM songwriter')
+        const {
+            rows
+        } = await pool.query('SELECT * FROM songwriter')
         res.json(rows)
     } catch (err) {
         res.json(err.message)
@@ -13,7 +15,9 @@ router.get('/songwriter', async (req, res) => {
 
 router.get('/songwriter/:id', async (req, res) => {
     try {
-        const { id } = req.params
+        const {
+            id
+        } = req.params
         const {
             rows,
         } = await pool.query('SELECT * FROM songwriter WHERE name=($1)', [id])
@@ -25,7 +29,9 @@ router.get('/songwriter/:id', async (req, res) => {
 
 router.get('/songwriter/:id/discography', async (req, res) => {
     try {
-        const { id } = req.params
+        const {
+            id
+        } = req.params
         const {
             rows,
         } = await pool.query('SELECT * FROM discography WHERE name=($1)', [id])
@@ -37,8 +43,12 @@ router.get('/songwriter/:id/discography', async (req, res) => {
 
 router.get('/songwriter/:id/bio', async (req, res) => {
     try {
-        const { id } = req.params
-        const { rows } = await pool.query('SELECT * FROM bio WHERE name=($1)', [
+        const {
+            id
+        } = req.params
+        const {
+            rows
+        } = await pool.query('SELECT * FROM bio WHERE name=($1)', [
             id,
         ])
         res.json(rows)

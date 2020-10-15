@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Carousel from './components/Carousel/Carousel.js';
 import Navbar from './components//Navbar/Navbar.js';
 import Drawer from './components/Navbar/Drawer.js';
 import Backdrop from './components/Backdrop/Backdrop';
 import Footer from './components/Footer/Footer';
+import Artists from './routes/artists/artists';
 
 function App() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -29,7 +31,19 @@ function App() {
       <Drawer show={drawerOpen} />
       {backdrop}
       <main>
-        <Carousel />
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Carousel />
+            </Route>
+            <Route path="/artists">
+              <Artists />
+            </Route>
+            <Route path="/songwriters"></Route>
+            <Route path="/songs"></Route>
+            <Route path="/song_selector"></Route>
+          </Switch>
+        </Router>
       </main>
       <Footer />
     </div>

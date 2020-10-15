@@ -9,13 +9,13 @@ const Navbar = (props) => (
         <DrawerToggle click={props.drawerClickHandler} />
       </div>
       <div className="navbar_logo">
-        <a href="#">SongHz</a>
+        <a href="/">SongHz</a>
       </div>
       <div className="spacer"></div>
       <div className="navbar_navigation-items">
         <ul>
           <li>
-            <a href="#">Artists</a>
+            <a href="/artists">Artists</a>
           </li>
           <li>
             <a href="#">Songwriters</a>
