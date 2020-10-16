@@ -1,16 +1,43 @@
+@font-face {
+  font-family: title;
+  src: url("../../components/assets/Staatliches-Regular.ttf"); }
+@font-face {
+  font-family: ag-font;
+  src: url("../../components/assets/SansitaSwashed-VariableFont_wght.ttf"); }
+@font-face {
+  font-family: cp-font;
+  src: url("../../components/assets/Montserrat-Black.ttf"); }
+.artist_1, .artist_2, .artist_3 {
+  height: 20rem;
+  width: 100%;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1s ease;
+  opacity: 0.8;
+  font-size: 35px; }
+
 .artists-parent {
   display: flex;
   justify-content: center;
   position: fixed;
   width: 100vw;
-  height: 100%; }
+  height: 100%;
+  overflow-y: scroll; }
 
 .header {
   padding-top: 56px;
   width: 100%;
+  height: 15%;
   display: flex;
   align-items: center;
-  border: 1px solid black; }
+  color: #232323;
+  background-color: #white; }
+
+.artist_title {
+  padding-left: 5rem;
+  font-family: title;
+  font-size: 50px; }
 
 .artists {
   display: flex;
@@ -20,5 +47,40 @@
   display: flex;
   align-items: center;
   box-shadow: 1px 0 7px rgba(0, 0, 0, 0.2); }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+
+.artist_1 {
+  background-image: url("../../components/assets/bts_poster.jpg");
+  font-family: title; }
+
+.artist_2 {
+  background-image: url("../../components/assets/ag_poster.jpg");
+  font-family: ag-font; }
+
+.artist_3 {
+  background-image: url("../../components/assets/cp_poster.jpg");
+  font-family: cp-font; }
+
+.artist_1:hover, .artist_2:hover, .artist_3:hover {
+  background-size: 120%;
+  opacity: 1; }
+
+.artist_name {
+  z-index: 2;
+  color: white;
+  position: relative;
+  top: 60%;
+  left: 15%; }
+
+.artist_link {
+  text-decoration: none; }
+
+@media (max-width: 768px) {
+  .artists {
+    width: 100%; } }
 
 /*# sourceMappingURL=artists.css.map */
