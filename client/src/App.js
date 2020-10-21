@@ -36,7 +36,7 @@ function App() {
             <Route exact path="/">
               <Carousel />
             </Route>
-            <Route exact path="/artists">
+            <Route path="/artists">
               <Artists />
             </Route>
             <Route path="/songwriters"></Route>

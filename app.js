@@ -15,6 +15,7 @@ var songwriterRoutes = require('./routes/songwriterRoutes')
 var songsRoutes = require('./routes/songsRoutes')
 
 /// SETUP MIDDLEWARE ///
+app.use(cors())
 app.use(express.json())
 app.use(
     express.urlencoded({
@@ -29,41 +30,6 @@ app.use(
     })
 )
 
-/// MULTER ///
-const multerMid = multer({
-    storage: multer.memoryStorage(),
-    limits: {
-        fileSize: 5 * 1024 * 1024, // no larger than 5mb.
-    },
-})
-
-app.disable('x-powered-by')
-app.use(multerMid.single('file'))
-
-app.post('/uploads', (req, res, next) => {})
-
-// FILE UPLOAD TO GCP
-app.post('/uploads', async (req, res, next) => {
-    try {
-        const myFile = req.file
-        const imageUrl = await uploadImage(myFile)
-        res.status(200).json({
-            message: 'Upload was successful',
-            data: imageUrl,
-        })
-    } catch (error) {
-        next(error)
-    }
-})
-
-app.use((err, req, res, next) => {
-    res.status(500).json({
-        error: err,
-        message: 'Internal server error',
-    })
-    next()
-})
-
 /// MAIN BODY ///
 
 // ROUTERS
@@ -71,8 +37,40 @@ app.use(artistRoutes)
 app.use(songwriterRoutes)
 app.use(songsRoutes)
 
-// route to song/album controller
-// song selector controller
+/// MULTER ///
+// const multerMid = multer({
+//     storage: multer.memoryStorage(),
+//     limits: {
+//         fileSize: 5 * 1024 * 1024, // no larger than 5mb.
+//     },
+// })
+
+// app.disable('x-powered-by')
+// app.use(multerMid.single('file'))
+
+// app.post('/uploads', (req, res, next) => {})
+
+// // FILE UPLOAD TO GCP
+// app.post('/uploads', async (req, res, next) => {
+//     try {
+//         const myFile = req.file
+//         const imageUrl = await uploadImage(myFile)
+//         res.status(200).json({
+//             message: 'Upload was successful',
+//             data: imageUrl,
+//         })
+//     } catch (error) {
+//         next(error)
+//     }
+// })
+
+// app.use((err, req, res, next) => {
+//     res.status(500).json({
+//         error: err,
+//         message: 'Internal server error',
+//     })
+//     next()
+// })
 
 /// ---------- ERROR HANDLERS ---------- ///
 app.use((req, res, next) => {
@@ -85,7 +83,7 @@ app.use((err, req, res, next) => {
 
     // render the error page
     res.status(err.status || 500)
-    res.render('error')
+    res.json({ error: err })
 })
 
 module.exports = app

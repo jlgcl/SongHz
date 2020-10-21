@@ -17,7 +17,7 @@ router.get('/artist/:id', async (req, res) => {
         const {
             rows,
         } = await pool.query('SELECT * FROM artists WHERE name=($1)', [id])
-        res.json(rows)
+        res.json(rows[0])
     } catch (err) {
         res.json(err.message)
     }
@@ -43,7 +43,7 @@ router.get('/artist/:id/bio', async (req, res) => {
         const { rows } = await pool.query('SELECT * FROM bio WHERE name=($1)', [
             id,
         ])
-        res.json(rows[0])
+        res.json(rows[0]['bio'])
     } catch (err) {
         res.json(err.message)
     }

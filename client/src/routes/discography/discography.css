@@ -1,0 +1,51 @@
+.disco_parent {
+    margin-top: 30px;
+    padding-bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.disco_parent[id='BTS'] {
+    background-color: #cf628a;
+}
+
+.disco_parent[id='Ariana Grande'] {
+    background-color: #b2b2c0;
+}
+
+.disco_parent[id='Coldplay'] {
+    background-color: rgb(1, 112, 238);
+}
+
+.disco_content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    font: 15px poppins;
+    color: #442a34;
+}
+
+th {
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+td {
+    border-bottom: 1px solid rgb(102, 102, 102);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1)
+}
+
+.disco_header {
+    font: 40px subheader;
+    color: white;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-top: 20px;
+}

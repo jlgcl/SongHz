@@ -1,4 +1,4 @@
-import React, { useEffects, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 import './artists.css';
 import ArtistPage from './artist_page';

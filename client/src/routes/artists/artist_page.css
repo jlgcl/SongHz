@@ -1,19 +1,23 @@
 @font-face {
   font-family: subheader;
   src: url("../../components/assets/BebasNeue-Regular.ttf"); }
+@font-face {
+  font-family: poppins;
+  src: url("../../components/assets/Poppins-Regular.ttf"); }
 .artist_page {
   height: 100%;
   width: 100%;
   top: 5rem;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  box-shadow: 1px 0 7px rgba(0, 0, 0, 0.5); }
 
 .artist_page[id="BTS"] {
   background-color: #e66e9b; }
 
 .artist_page[id="Ariana Grande"] {
-  background-color: #E6E6FA; }
+  background-color: #c2c2d1; }
 
 .artist_page[id="Coldplay"] {
   background-color: #0077ff; }
@@ -62,6 +66,29 @@
   width: 40%; }
 
 .bio {
-  width: 60%; }
+  width: 60%;
+  font: 15px poppins;
+  color: #442a34; }
+
+.artist_details {
+  margin-top: 20px;
+  width: 80%; }
+
+.artist_details_head {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0; }
+
+.artist_details_subhead {
+  font: 20px subheader;
+  width: 40%;
+  text-align: center;
+  color: white; }
+
+.artist_details_data {
+  width: 60%;
+  text-align: center;
+  font: 15px poppins;
+  color: #442a34; }
 
 /*# sourceMappingURL=artist_page.css.map */

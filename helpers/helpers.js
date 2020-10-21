@@ -2,7 +2,7 @@ const util = require('util')
 const gc = require('../config/')
 const bucket = gc.bucket('songhz')
 
-export const uploadImage = (file) =>
+const uploadImage = (file) => {
     new Promise((resolve, reject) => {
         const { originalname, buffer } = file
 
@@ -22,3 +22,6 @@ export const uploadImage = (file) =>
             })
             .end(buffer)
     })
+}
+
+module.exports = uploadImage
