@@ -7,6 +7,7 @@ import Drawer from './components/Navbar/Drawer.js';
 import Backdrop from './components/Backdrop/Backdrop';
 import Footer from './components/Footer/Footer';
 import Artists from './routes/artists/artists';
+import Songs from './routes/songs/songs';
 
 function App() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -40,7 +41,9 @@ function App() {
               <Artists />
             </Route>
             <Route path="/songwriters"></Route>
-            <Route path="/songs"></Route>
+            <Route path="/songs">
+              <Songs />
+            </Route>
             <Route path="/song_selector"></Route>
           </Switch>
         </Router>

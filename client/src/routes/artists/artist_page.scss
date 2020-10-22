@@ -112,3 +112,13 @@
     font: 15px poppins;
     color: #442a34;
 }
+
+@media(max-width: 749px) {
+    .artist_info, .artist_details_head {
+        flex-direction: column;
+        align-items: center;
+    }
+    .bio {
+        width: 100%;
+    }
+}

@@ -81,6 +81,14 @@
 
 @media (max-width: 768px) {
   .artists {
-    width: 100%; } }
+    width: 100%; }
+
+  .main {
+    display: block; }
+
+  .artist_1, .artist_2, .artist_3 {
+    background-size: cover; }
+    .artist_1:hover, .artist_2:hover, .artist_3:hover {
+      background-size: cover; } }
 
 /*# sourceMappingURL=artists.css.map */

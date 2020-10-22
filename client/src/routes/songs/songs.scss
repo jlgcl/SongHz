@@ -1,0 +1,65 @@
+.songs_parent {
+    background-color: #626b6b;
+    width: 100vw;
+    height: 100%;
+    bottom: 6vh;
+}
+
+.songs_header {
+    padding-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font: 50px title;
+    color: white;
+}
+
+.artist_selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.songs_artist {
+    padding: 15px 0;
+    margin: 0 30px;
+    transition: color 1s ease;
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    
+    // text color change on focus/hover
+    &:focus, &:hover {
+        outline: 0;
+        color: #b2def7;
+        transition: color 1s ease;
+        cursor: pointer;
+    }
+    &:after, &:before {
+        transition: all 1s ease 0s;
+    }
+    // position of the underline
+    &:after {
+        position: absolute;
+        z-index: 1;
+        content: "";
+        width: 3px; // underline starting width
+        height: 3px;
+        left: 0;
+        bottom: 0;
+    }
+    // extent of the underline transition
+    &:focus::after, &:hover::after {
+        width: 100%;    // underline final width
+        height: 3px;
+    }
+    &:focus::after, &:focus::before, &:hover::after, &:hover::before {
+        outline: 0;
+        background-color: #b2def7;
+        transition: all 1s ease 0s;
+    }
+}

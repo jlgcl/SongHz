@@ -49,3 +49,12 @@ td {
     text-align: center;
     padding-top: 20px;
 }
+
+@media(max-width: 749px) {
+    th {
+        font-size: 12px;
+    }
+    td {
+        font-size: 10px;
+    }
+}
