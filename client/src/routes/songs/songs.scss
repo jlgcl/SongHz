@@ -32,18 +32,15 @@
     white-space: nowrap;
     overflow: hidden;
     
-    // text color change on focus/hover
+    // color change on focus/hover
     &:focus, &:hover {
         outline: 0;
         color: #b2def7;
         transition: color 1s ease;
         cursor: pointer;
     }
-    &:after, &:before {
-        transition: all 1s ease 0s;
-    }
-    // position of the underline
-    &:after {
+    // position of the underline (after the main element)
+    &:after  {
         position: absolute;
         z-index: 1;
         content: "";
@@ -54,12 +51,22 @@
     }
     // extent of the underline transition
     &:focus::after, &:hover::after {
-        width: 100%;    // underline final width
+        width: 100%;    // underline final width (changes width of the :after element)
         height: 3px;
     }
     &:focus::after, &:focus::before, &:hover::after, &:hover::before {
         outline: 0;
         background-color: #b2def7;
         transition: all 1s ease 0s;
+    }
+    // keep selection after click
+    &.active:after {
+        background-color: #b2def7;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        bottom: 0;
+        z-index: 3;
     }
 }

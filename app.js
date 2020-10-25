@@ -7,6 +7,10 @@ const multer = require('multer')
 const uploadImage = require('./helpers/helpers')
 const bodyParser = require('body-parser')
 
+// GCS setup
+const gc = require('./config/')
+const bucket = gc.bucket('songhz')
+
 var app = express()
 
 /// ROUTERS ///
@@ -38,39 +42,70 @@ app.use(songwriterRoutes)
 app.use(songsRoutes)
 
 /// MULTER ///
-// const multerMid = multer({
-//     storage: multer.memoryStorage(),
-//     limits: {
-//         fileSize: 5 * 1024 * 1024, // no larger than 5mb.
-//     },
-// })
+const multerMid = multer({
+    storage: multer.memoryStorage(),
+    limits: {
+        fileSize: 5 * 1024 * 1024, // no larger than 5mb.
+    },
+})
 
-// app.disable('x-powered-by')
-// app.use(multerMid.single('file'))
+app.disable('x-powered-by')
+app.use(multerMid.single('file'))
 
-// app.post('/uploads', (req, res, next) => {})
+app.post('/uploads', (req, res, next) => {})
 
-// // FILE UPLOAD TO GCP
-// app.post('/uploads', async (req, res, next) => {
-//     try {
-//         const myFile = req.file
-//         const imageUrl = await uploadImage(myFile)
-//         res.status(200).json({
-//             message: 'Upload was successful',
-//             data: imageUrl,
-//         })
-//     } catch (error) {
-//         next(error)
-//     }
-// })
+// FILE UPLOAD TO GCS
+app.post('/uploads', async (req, res, next) => {
+    try {
+        const myFile = req.file
+        const imageUrl = await uploadImage(myFile)
+        res.status(200).json({
+            message: 'Upload was successful',
+            data: imageUrl,
+        })
+    } catch (error) {
+        next(error)
+    }
+})
 
-// app.use((err, req, res, next) => {
-//     res.status(500).json({
-//         error: err,
-//         message: 'Internal server error',
-//     })
-//     next()
-// })
+app.use((err, req, res, next) => {
+    res.status(500).json({
+        error: err,
+        message: 'Internal server error',
+    })
+    next()
+})
+
+/// FILE ACCESS FROM GCS ///
+app.get('/gcs/:id', async (req, res) => {
+    // get signed URL options
+    const options = {
+        version: 'v2',
+        action: 'read',
+        expires: Date.now() + 1000 * 60 * 60, // one hour access period
+    }
+    let urlCollection = []
+    try {
+        const [files] = await bucket.getFiles({ prefix: `${req.params.id}/` })
+        const pushData = async () => {
+            files.forEach(async (file) => {
+                try {
+                    let url = await bucket.file(file.name).getSignedUrl(options)
+                    const pushDataB = async () => {
+                        urlCollection.push([file.name, url])
+                    }
+                    await pushDataB()
+                    res.json(urlCollection)
+                } catch (err) {
+                    console.log(err.message)
+                }
+            })
+        }
+        pushData()
+    } catch (error) {
+        console.log(error.message)
+    }
+})
 
 /// ---------- ERROR HANDLERS ---------- ///
 app.use((req, res, next) => {
