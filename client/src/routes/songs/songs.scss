@@ -2,11 +2,13 @@
     background-color: #626b6b;
     width: 100vw;
     height: 100%;
+    position: absolute;
     bottom: 6vh;
+    overflow-y: scroll;
 }
 
 .songs_header {
-    padding-top: 60px;
+    padding-top: 110px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -20,6 +22,8 @@
     flex-direction: row;
     justify-content: center;
     margin-top: 2em;
+    font: 30px poppins;
+    color: white;
 }
 
 .songs_artist {
@@ -45,7 +49,7 @@
         z-index: 1;
         content: "";
         width: 3px; // underline starting width
-        height: 3px;
+        height: 1px;
         left: 0;
         bottom: 0;
     }

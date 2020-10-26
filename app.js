@@ -87,21 +87,15 @@ app.get('/gcs/:id', async (req, res) => {
     let urlCollection = []
     try {
         const [files] = await bucket.getFiles({ prefix: `${req.params.id}/` })
-        const pushData = async () => {
-            files.forEach(async (file) => {
-                try {
-                    let url = await bucket.file(file.name).getSignedUrl(options)
-                    const pushDataB = async () => {
-                        urlCollection.push([file.name, url])
-                    }
-                    await pushDataB()
-                    res.json(urlCollection)
-                } catch (err) {
-                    console.log(err.message)
-                }
-            })
+        for (const file of files) {
+            let [url, metaData] = await Promise.all([
+                bucket.file(file.name).getSignedUrl(options),
+                bucket.file(file.name).getMetadata(),
+            ])
+            urlCollection.push([url, metaData[0]['metadata']])
         }
-        pushData()
+
+        res.json(urlCollection)
     } catch (error) {
         console.log(error.message)
     }

@@ -2,11 +2,45 @@ import React, { useState, useEffect } from 'react';
 import './songs_spec.css';
 
 const SongsSpec = (props) => {
+  let initialState = [['', [{ Name: '' }]]];
   const [artistName, setArtistName] = useState(props.artist);
+  const [songs, setSongs] = useState(initialState);
+
+  const fetchSongs = async () => {
+    let settings = {
+      method: 'GET',
+    };
+    try {
+      let fetchRes = await fetch(`http://localhost:8080/gcs/${artistName}`, settings);
+      let resJson = await fetchRes.json();
+      resJson = resJson.slice(1);
+      setSongs(resJson);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+  // STATUS: FIX ISSUE WITH useEffect for artist names
   useEffect(() => {
-    if (props.artist !== '') setArtistName(props.artist);
-  }, [props]);
-  return <div className="songs_spec_container"></div>;
+    if (props.artist !== '' && props.artist !== null) {
+      setArtistName(props.artist);
+    }
+    return function cleanup() {
+      setArtistName(artistName);
+    };
+  }, [props, artistName]);
+  console.log(props.artist, artistName);
+
+  return (
+    <div className="songs_spec_container">
+      {songs.map((song) => (
+        <div key={song[0]} className="song">
+          <div className="song_photo" style={{ backgroundImage: `url(${song[0]})` }}></div>
+          {song[1]['Name']}
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default SongsSpec;
