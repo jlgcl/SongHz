@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './songs.css';
 import SongsSpec from './songs_spec';
+import SongDetails from './song_details';
 
 const Songs = () => {
   const activeEl_1 = useRef(null);
@@ -9,6 +10,20 @@ const Songs = () => {
   const activeEl_3 = useRef(null);
 
   const [activeArtist, setActiveArtist] = useState(null);
+  const [selectedSong, setSelectedSong] = useState(null);
+  const [songPhoto, setSongPhoto] = useState(null);
+  const [renderDetails, setRenderDetails] = useState(false);
+  const setSongCallback = (songName, songPhoto) => {
+    setSelectedSong(songName);
+    setSongPhoto(songPhoto);
+  };
+
+  const detailHandler = () => {
+    if (selectedSong !== null) setRenderDetails(true);
+  };
+  const viewDetailHandler = () => {
+    if (renderDetails) setRenderDetails(false);
+  };
 
   const onArtistClick = (e) => {
     if (
@@ -39,9 +54,12 @@ const Songs = () => {
     onArtistClick();
     setActiveArtist(activeEl_1.current.textContent);
   }, []);
+  useEffect(() => {
+    detailHandler();
+  }, [selectedSong]);
 
   return (
-    <div className="songs_parent">
+    <div className="songs_parent" onClick={viewDetailHandler}>
       <div className="songs_header">Songs</div>
       <div className="artist_selection">
         <div className="songs_artist active" id="initial" ref={activeEl_1} onClick={onArtistClick}>
@@ -54,7 +72,8 @@ const Songs = () => {
           Coldplay
         </div>
       </div>
-      <SongsSpec artist={activeArtist} />
+      <SongsSpec artist={activeArtist} setSongHandler={setSongCallback} />
+      {renderDetails ? <SongDetails songName={selectedSong} songPhoto={songPhoto} /> : null}
     </div>
   );
 };

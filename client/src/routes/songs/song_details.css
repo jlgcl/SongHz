@@ -1,0 +1,61 @@
+@font-face {
+    font-family: song-title;
+    src: url('../../components/assets/PassionOne-Regular.ttf')
+}
+
+@font-face {
+    font-family: song-description;
+    src: url('../../components/assets/EncodeSansCondensed-Regular.ttf')
+}
+
+.song_details {
+    position: absolute;
+    min-height: 950px;
+    top: 200px;
+    bottom: 20vh;
+    right: 100px;
+    left: 100px;
+    background-color: rgba(0,0,0,0.7);
+    font-size: 20px;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px;
+}
+
+.song_details_photo {
+    width: 50%;
+    height: 70%;
+    margin: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.song_details_info {
+    width: 50%;
+    min-height: 60%;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.song_details_title {
+    padding: 15px 0;
+    font: 40px song-title;
+    color: white;
+}
+
+.song_details_artist {
+    padding: 15px 0;
+    font: 30px song-title;
+    color: white;
+}
+
+.song_details_description {
+    padding: 15px 0;
+    font: 20px song-description;
+    color: white;
+}

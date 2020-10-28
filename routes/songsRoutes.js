@@ -4,9 +4,7 @@ const pool = require('../db/index')
 
 router.get('/songs', async (req, res) => {
     try {
-        const {
-            rows
-        } = pool.query('SELECT * FROM songs')
+        const { rows } = await pool.query('SELECT * FROM songs')
         res.json(rows)
     } catch (err) {
         res.json(err.message)
@@ -15,12 +13,10 @@ router.get('/songs', async (req, res) => {
 
 router.get('/songs/:id', async (req, res) => {
     try {
+        const { id } = req.params
         const {
-            id
-        } = req.params
-        const {
-            rows
-        } = pool.query('SELECT * FROM songs WHERE id=($1)', [id])
+            rows,
+        } = await pool.query('SELECT * FROM songs WHERE title=($1)', [id])
         res.json(rows)
     } catch (err) {
         res.json(err.message)

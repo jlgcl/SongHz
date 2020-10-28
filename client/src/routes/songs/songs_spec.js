@@ -20,22 +20,28 @@ const SongsSpec = (props) => {
     }
   };
 
-  // STATUS: FIX ISSUE WITH useEffect for artist names
   useEffect(() => {
     if (props.artist !== '' && props.artist !== null) {
       setArtistName(props.artist);
     }
-    return function cleanup() {
-      setArtistName(artistName);
-    };
-  }, [props, artistName]);
-  console.log(props.artist, artistName);
+  }, [props.artist]);
+  useEffect(() => {
+    if (props.artist !== '' && props.artist !== null && props !== undefined) {
+      fetchSongs();
+    }
+  }, [artistName]);
 
   return (
     <div className="songs_spec_container">
       {songs.map((song) => (
         <div key={song[0]} className="song">
-          <div className="song_photo" style={{ backgroundImage: `url(${song[0]})` }}></div>
+          <div
+            className="song_photo"
+            style={{ backgroundImage: `url(${song[0]})` }}
+            onClick={() => {
+              props.setSongHandler(song[1]['Name'], song[0]);
+            }}
+          ></div>
           {song[1]['Name']}
         </div>
       ))}
