@@ -21,8 +21,20 @@ const Songs = () => {
   const detailHandler = () => {
     if (selectedSong !== null) setRenderDetails(true);
   };
-  const viewDetailHandler = () => {
-    if (renderDetails) setRenderDetails(false);
+  const viewDetailHandler = (e) => {
+    console.log(renderDetails);
+    if (
+      renderDetails &&
+      e.target.className !== 'song_details' &&
+      e.target.className !== 'song_details_photo' &&
+      e.target.className !== 'song_details_info' &&
+      e.target.className !== 'song_details_title' &&
+      e.target.className !== 'song_details_artist' &&
+      e.target.className !== 'song_details_description'
+    ) {
+      setRenderDetails(false);
+      setSelectedSong(null);
+    }
   };
 
   const onArtistClick = (e) => {
