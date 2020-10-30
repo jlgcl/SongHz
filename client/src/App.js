@@ -8,6 +8,7 @@ import Backdrop from './components/Backdrop/Backdrop';
 import Footer from './components/Footer/Footer';
 import Artists from './routes/artists/artists';
 import Songs from './routes/songs/songs';
+import Songwriters from './routes/songwriters/songwriters';
 
 function App() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -40,7 +41,9 @@ function App() {
             <Route path="/artists">
               <Artists />
             </Route>
-            <Route path="/songwriters"></Route>
+            <Route path="/songwriters">
+              <Songwriters />
+            </Route>
             <Route path="/songs">
               <Songs />
             </Route>

@@ -18,7 +18,7 @@ const Navbar = (props) => (
             <a href="/artists">Artists</a>
           </li>
           <li>
-            <a href="#">Songwriters</a>
+            <a href="/songwriters">Songwriters</a>
           </li>
           <li>
             <a href="/songs">Songs</a>
