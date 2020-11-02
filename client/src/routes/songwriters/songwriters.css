@@ -10,12 +10,17 @@
 }
 
 .sw-header {
-    margin-top: 50px;
+    padding-top: 130px;
+    padding-bottom: 50px;
+    font: 50px title;
 }
 
 .sw-list {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     min-height: 90%;
 }
@@ -26,12 +31,47 @@
     align-items: center;
     height: 300px;
     width: 300px;
+    padding: 15px 30px;
 }
 
 .sw-photo {
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
+    transition: all 1s ease;
+}
+
+.sw-photo:hover {
+    background-size: 200%;
+}
+
+.sw-name {
+    font: 25px subheader;
+}
+
+.sw-detail-parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 0%;
+    width: 100%;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    color: black;
+}
+
+.sw-closebtn {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 50px;
+    cursor: pointer;
 }
