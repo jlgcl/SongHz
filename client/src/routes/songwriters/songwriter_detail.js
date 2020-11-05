@@ -38,7 +38,6 @@ const SongwriterDetail = (props) => {
     }
   }, [songwriter]);
 
-  console.log(swBio);
   return (
     <div className="sw-detail-content">
       <div className="sw-detail-photo" style={{ backgroundImage: `url(${swUrl})` }}></div>
