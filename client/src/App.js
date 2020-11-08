@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import Artists from './routes/artists/artists';
 import Songs from './routes/songs/songs';
 import Songwriters from './routes/songwriters/songwriters';
+import SongSelector from './routes/song-selector/song_selector';
 
 function App() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -47,7 +48,9 @@ function App() {
             <Route path="/songs">
               <Songs />
             </Route>
-            <Route path="/song_selector"></Route>
+            <Route path="/song_selector">
+              <SongSelector />
+            </Route>
           </Switch>
         </Router>
       </main>

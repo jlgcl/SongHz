@@ -1,0 +1,64 @@
+.SongSelector-parent {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.SongSelector-header {
+    font: 35px title;
+    position: absolute;
+    top: 70px;
+}
+.SongSelector-subheader {
+    position: absolute;
+    top: 120px;
+}
+
+.SongSelections {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 70%;
+    flex-wrap: wrap;
+    height: 70%;
+    margin-top: 90px;
+}
+
+.section-header {
+    font: 25px subheader;
+    padding: 5px;
+}
+
+.selection {
+    border: 1px solid;
+}
+
+.Activity, .Mood, .Environment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.1em solid #b9b8b8;
+    box-shadow: 0.5px 1px 2px #888888;
+    padding: 20px;
+}
+
+.selection-content {
+    padding: 15px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.selection {
+    padding: 8px 15px;
+    border: 0.5px solid #a09f9f;
+    border-radius: 15px;
+}
