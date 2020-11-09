@@ -12,12 +12,10 @@
 
 .SongSelector-header {
     font: 35px title;
-    position: absolute;
-    top: 70px;
+    margin-top: 200px;
 }
 .SongSelector-subheader {
-    position: absolute;
-    top: 120px;
+    margin-top: 20px;
 }
 
 .SongSelections {
@@ -25,9 +23,8 @@
     flex-direction: column;
     justify-content: space-evenly;
     width: 70%;
-    flex-wrap: wrap;
     height: 70%;
-    margin-top: 90px;
+    margin-top: 50px;
 }
 
 .section-header {
@@ -59,6 +56,31 @@
 
 .selection {
     padding: 8px 15px;
-    border: 0.5px solid #a09f9f;
-    border-radius: 15px;
+    border: 0.5px solid #bbbaba;
+    border-radius: 25px;
+    background-color: #f4f4f4;
+}
+
+.selection:hover {
+    border-color: blue;
+    cursor: pointer;
+}
+
+.selection-submit {
+    background-color: #8200FF;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+    margin: 25px;
+    margin-bottom: 100px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.selection-submit:hover {
+    color: black;
 }
