@@ -134,13 +134,13 @@ const SongSelector = () => {
                   </div>
                 </div>
               </div>
-              <Link to="song_selector/results">
+              <Link to="/song_selector/results">
                 <button className="selection-submit">Generate Songs</button>
               </Link>
             </div>
           )}
         />
-        <Route path="song_selector/results">
+        <Route exact path="/song_selector/results">
           <SelectorResults selections={selection} />
         </Route>
       </Switch>

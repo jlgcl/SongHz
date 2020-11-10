@@ -17,6 +17,7 @@ var app = express()
 var artistRoutes = require('./routes/artistRoutes')
 var songwriterRoutes = require('./routes/songwriterRoutes')
 var songsRoutes = require('./routes/songsRoutes')
+var songSelectorRoutes = require('./routes/songSelector')
 
 /// SETUP MIDDLEWARE ///
 app.use(cors())
@@ -40,6 +41,7 @@ app.use(
 app.use(artistRoutes)
 app.use(songwriterRoutes)
 app.use(songsRoutes)
+app.use(songSelectorRoutes)
 
 /// MULTER ///
 const multerMid = multer({
