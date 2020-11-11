@@ -17,7 +17,7 @@ const SongSelector = () => {
   let moodSelectors = [
     '😆 Cheerful',
     '🤗 Motivating',
-    '⏰ Melancholy',
+    '⏰  Melancholy',
     '😰 Stressed',
     '🌙 Night-time',
     '😌 Relaxing',
@@ -67,6 +67,17 @@ const SongSelector = () => {
     envRef.current.map((ref) => (ref.style = 'background-color: #CCCCCC'));
     selectRef.current.map((ref) => (ref.style = 'background-color: #8200FF'));
   };
+
+  useEffect(() => {
+    return () => {
+      setSelection([]);
+      setMax(0);
+      activityRef.current = [];
+      moodRef.current = [];
+      envRef.current = [];
+      selectRef.current = [];
+    };
+  }, []);
 
   return (
     <Router>

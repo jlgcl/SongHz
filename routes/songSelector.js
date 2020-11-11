@@ -9,19 +9,19 @@ router.post('/songselect', async (req, res) => {
         switch (req.body.length) {
             case 3:
                 rows = await pool.query(
-                    'SELECT title from songs ORDER BY (CASE WHEN ($1)=ANY(labels) THEN 1 ELSE 0 END + CASE WHEN ($2)=ANY(labels) THEN 1 ELSE 0 END + CASE WHEN ($3)=ANY(labels) THEN 1 ELSE 0 END) DESC',
+                    'SELECT title, count(*) FROM (SELECT UNNEST(array[($1), ($2), ($3)]) as tag, * FROM songs) as w WHERE labels @> array[tag] GROUP BY title ORDER BY 2 DESC',
                     [req.body[0], req.body[1], req.body[2]]
                 )
                 break
             case 2:
                 rows = await pool.query(
-                    'SELECT title from songs ORDER BY (CASE WHEN ($1)=ANY(labels) THEN 1 ELSE 0 END + CASE WHEN ($2)=ANY(labels) THEN 1 ELSE 0 END) DESC',
+                    'SELECT title, count(*) FROM (SELECT UNNEST(array[($1), ($2)]) as tag, * FROM songs) as w WHERE labels @> array[tag] GROUP BY title ORDER BY 2 DESC',
                     [req.body[0], req.body[1]]
                 )
                 break
             case 1:
                 rows = await pool.query(
-                    'SELECT title from songs ORDER BY (CASE WHEN ($1)=ANY(labels) THEN 1 ELSE 0 END) DESC',
+                    'SELECT title, count(*) FROM (SELECT UNNEST(array[($1)]) as tag, * FROM songs) as w WHERE labels @> array[tag] GROUP BY title ORDER BY 2 DESC',
                     [req.body[0]]
                 )
                 break
