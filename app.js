@@ -79,6 +79,8 @@ app.use((err, req, res, next) => {
 })
 
 /// FILE ACCESS FROM GCS ///
+
+// By artist name (directory name)
 app.get('/gcs/:id', async (req, res) => {
     // get signed URL options
     const options = {
