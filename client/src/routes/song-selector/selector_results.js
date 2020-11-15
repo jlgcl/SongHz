@@ -79,7 +79,6 @@ const SelectorResults = (props) => {
       }
     });
     let index = songNames.indexOf(songMatch);
-    console.log(songNames, songMatch, index);
     return songInfo[index][0];
   };
 

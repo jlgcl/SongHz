@@ -7,6 +7,7 @@
 @font-face {
   font-family: cp-font;
   src: url("../../components/assets/Montserrat-Black.ttf"); }
+  
 .artist_1, .artist_2, .artist_3 {
   height: 20rem;
   width: 100%;
@@ -37,6 +38,7 @@
 
 .artist_title {
   padding-left: 5rem;
+  margin-top: 7rem;
   font-family: title;
   font-size: 50px; }
 
@@ -46,12 +48,15 @@
   background-color: white;
   width: 80%;
   display: flex;
-  align-items: center; }
+  align-items: center; 
+}
 
 .main {
   display: flex;
   flex-direction: column;
-  width: 100%; }
+  width: 100%; 
+  margin-top: 80px;
+}
 
 .artist_1 {
   background-image: url("../../components/assets/bts_poster.jpg");
@@ -81,10 +86,13 @@
 
 @media (max-width: 768px) {
   .artists {
-    width: 100%; }
+    width: 100%; 
+  }
 
   .main {
-    display: block; }
+    display: block; 
+    margin-top: 80px;
+  }
 
   .artist_1, .artist_2, .artist_3 {
     background-size: cover; }

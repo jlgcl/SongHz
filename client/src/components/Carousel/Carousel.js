@@ -15,13 +15,19 @@ function Carousel() {
     <div className="carousel">
       <Slider {...settings}>
         <div className="artist1">
-          <img src={require('../assets/bts.png')} />
+          <a href="/artists/bts">
+            <img src={require('../assets/bts.png')} />
+          </a>
         </div>
         <div className="artist2">
-          <img src={require('../assets/ag.jpg')} />
+          <a href="artists/ariana_grande">
+            <img src={require('../assets/ag.jpg')} />
+          </a>
         </div>
         <div className="artist3">
-          <img src={require('../assets/cp.jpg')} />
+          <a href="artists/coldplay">
+            <img src={require('../assets/cp.jpg')} />
+          </a>
         </div>
       </Slider>
     </div>

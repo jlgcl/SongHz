@@ -31,10 +31,11 @@ img {
   height: 94vh;
   object-fit: cover; }
 
-.artist1 {
+.artist1, .artist2, .artist3 {
   background-image: url("../assets/bts2.png");
   background-size: cover;
   background-color: #ca8994;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-position: center; }
 
 /*# sourceMappingURL=carousel.css.map */

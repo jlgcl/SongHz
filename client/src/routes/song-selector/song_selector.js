@@ -70,87 +70,80 @@ const SongSelector = () => {
 
   useEffect(() => {
     return () => {
-      setSelection([]);
-      setMax(0);
       activityRef.current = [];
       moodRef.current = [];
       envRef.current = [];
       selectRef.current = [];
     };
   }, []);
+  console.log(selection);
 
   return (
     <Router>
-      <Switch>
-        <Route
-          exact
-          path="/song_selector"
-          render={() => (
-            <div className="SongSelector-parent">
-              <div className="SongSelector-header">What Do You Want to Listen to Today?</div>
-              <div className="SongSelector-subheader">Choose Max of 3 Selections</div>
-              <div className="SongSelections">
-                <div className="Activity">
-                  <div className="section-header">Activity</div>
-                  <div className="selection-content">
-                    {activitySelectors.map((selector, i) => {
-                      return (
-                        <div
-                          key={selector}
-                          className="selection"
-                          id={selector}
-                          ref={(node) => (activityRef.current[i] = node)}
-                          onClick={onSelect}
-                        >
-                          {selector}
-                        </div>
-                      );
-                    })}
+      <div className="SongSelector-parent">
+        <div className="SongSelector-header">What Do You Want to Listen to Today?</div>
+        <div className="SongSelector-subheader">Choose Max of 3 Selections</div>
+        <div className="SongSelections">
+          <div className="Activity">
+            <div className="section-header">Activity</div>
+            <div className="selection-content">
+              {activitySelectors.map((selector, i) => {
+                return (
+                  <div
+                    key={selector}
+                    className="selection"
+                    id={selector}
+                    ref={(node) => (activityRef.current[i] = node)}
+                    onClick={onSelect}
+                  >
+                    {selector}
                   </div>
-                </div>
-                <div className="Mood">
-                  <div className="section-header">Mood</div>
-                  <div className="selection-content">
-                    {moodSelectors.map((selector, i) => {
-                      return (
-                        <div
-                          key={selector}
-                          className="selection"
-                          id={selector}
-                          ref={(node) => (moodRef.current[i] = node)}
-                          onClick={onSelect}
-                        >
-                          {selector}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-                <div className="Environment">
-                  <div className="section-header">Environment</div>
-                  <div className="selection-content">
-                    {envSelectors.map((selector, i) => {
-                      return (
-                        <div
-                          key={selector}
-                          className="selection"
-                          id={selector}
-                          ref={(node) => (envRef.current[i] = node)}
-                          onClick={onSelect}
-                        >
-                          {selector}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-              <Link to="/song_selector/results">
-                <button className="selection-submit">Generate Songs</button>
-              </Link>
+                );
+              })}
             </div>
-          )}
-        />
+          </div>
+          <div className="Mood">
+            <div className="section-header">Mood</div>
+            <div className="selection-content">
+              {moodSelectors.map((selector, i) => {
+                return (
+                  <div
+                    key={selector}
+                    className="selection"
+                    id={selector}
+                    ref={(node) => (moodRef.current[i] = node)}
+                    onClick={onSelect}
+                  >
+                    {selector}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="Environment">
+            <div className="section-header">Environment</div>
+            <div className="selection-content">
+              {envSelectors.map((selector, i) => {
+                return (
+                  <div
+                    key={selector}
+                    className="selection"
+                    id={selector}
+                    ref={(node) => (envRef.current[i] = node)}
+                    onClick={onSelect}
+                  >
+                    {selector}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+        <Link to="/song_selector/results">
+          <button className="selection-submit">Generate Songs</button>
+        </Link>
+      </div>
+      <Switch>
         <Route exact path="/song_selector/results">
           <SelectorResults selections={selection} />
         </Route>

@@ -34,6 +34,7 @@
     font: 25px subheader;
     padding: 15px;
 }
+
 .result_song_artist {
     width: 30%;
     text-align: center;
@@ -56,4 +57,24 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 750px) {
+    .selector_results_header {
+        padding: 0 40px;
+        font-size: 25px;
+    }
+
+    .selector_results_list {
+        width: 100%;
+    }
+
+    .result_song_photo {
+        height: 150px;
+        background-size: contain;
+    }
+
+    .result_song_title {
+        font-size: 18px;
+    }
 }

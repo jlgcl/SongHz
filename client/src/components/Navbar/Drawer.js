@@ -11,16 +11,16 @@ const Drawer = (props) => {
     <nav className={drawerClasses}>
       <ul>
         <li>
-          <a href="#">Artists</a>
+          <a href="/artists">Artists</a>
         </li>
         <li>
-          <a href="#">Songwriters</a>
+          <a href="/songwriters">Songwriters</a>
         </li>
         <li>
-          <a href="#">Songs</a>
+          <a href="/songs">Songs</a>
         </li>
         <li>
-          <a href="#">Song Selector</a>
+          <a href="/song_selector">Song Selector</a>
         </li>
       </ul>
     </nav>

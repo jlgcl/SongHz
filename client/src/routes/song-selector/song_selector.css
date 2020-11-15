@@ -12,7 +12,7 @@
 
 .SongSelector-header {
     font: 35px title;
-    margin-top: 200px;
+    margin-top: 220px;
 }
 .SongSelector-subheader {
     margin-top: 20px;
@@ -83,4 +83,37 @@
 
 .selection-submit:hover {
     color: black;
+}
+
+@media(max-width: 750px) {
+
+    .SongSelector-parent {
+        padding: 50px;
+    }
+
+    .SongSelector-header {
+        margin-top: 350px;
+    }
+    
+    .SongSelector-subheader {
+        margin-top: 20px;
+    }
+
+    .SongSelections {
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    .selection-content {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .selection {
+        padding: 5px;
+    }
+
+    .selection-submit {
+        margin-top: 120px;
+    }
 }

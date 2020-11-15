@@ -37,12 +37,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 10px;
+        padding-top: 80px;
     }
     .sw-detail-photo {
         width: 90%;
         height: 20em;
     }
     .sw-info {
-        width: 90%;
+        width: 100%;
     }
 }
