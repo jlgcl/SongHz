@@ -16,7 +16,7 @@ const SongDetails = (props) => {
       method: 'GET',
       'Content-Type': 'application/json',
     };
-    const fetchRes = await fetch(`http://localhost:8080/songs/${props.songName}`, settings);
+    const fetchRes = await fetch(`/songs/${props.songName}`, settings);
     const resJson = await fetchRes.json();
     setSongInfo(resJson);
   };

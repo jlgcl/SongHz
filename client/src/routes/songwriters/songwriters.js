@@ -11,7 +11,7 @@ const Songwriters = () => {
 
   const fetchSongwiter = async () => {
     try {
-      let fetchRes = await fetch('http://localhost:8080/gcs/songwriters', {
+      let fetchRes = await fetch('/gcs/songwriters', {
         method: 'GET',
         'Content-Type': 'application/json',
       });

@@ -23,10 +23,7 @@ const Discography = (props) => {
       headers: { 'Content-Type': 'application/json' },
     };
     try {
-      let fetchRes = await fetch(
-        `http://localhost:8080/artist/${props.artist.name}/discography`,
-        settings
-      );
+      let fetchRes = await fetch(`/artist/${props.artist.name}/discography`, settings);
       let resJson = await fetchRes.json();
       setDisco(resJson);
     } catch (err) {

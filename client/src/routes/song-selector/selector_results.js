@@ -15,7 +15,7 @@ const SelectorResults = (props) => {
       },
       body: JSON.stringify(props.selections),
     };
-    const fetchRes = await fetch('http://localhost:8080/songselect', settings);
+    const fetchRes = await fetch('/songselect', settings);
     const resJson = await fetchRes.json();
     setSongs(resJson);
     fetchInfo();
@@ -28,9 +28,9 @@ const SelectorResults = (props) => {
       headers: { 'Content-Type': 'application/json' },
     };
     let totalRes = [];
-    const fetchBTSRes = await fetch(`http://localhost:8080/gcs/BTS`, settings);
-    const fetchAGRes = await fetch(`http://localhost:8080/gcs/Ariana Grande`, settings);
-    const fetchCPRes = await fetch(`http://localhost:8080/gcs/Coldplay`, settings);
+    const fetchBTSRes = await fetch(`/gcs/BTS`, settings);
+    const fetchAGRes = await fetch(`/gcs/Ariana Grande`, settings);
+    const fetchCPRes = await fetch(`/gcs/Coldplay`, settings);
     const BTSRes = await fetchBTSRes.json();
     const AGRes = await fetchAGRes.json();
     const CPRes = await fetchCPRes.json();

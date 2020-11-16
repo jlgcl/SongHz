@@ -14,14 +14,14 @@ const SongwriterDetail = (props) => {
 
   const fetchInfo = async () => {
     const settings = { method: 'GET', 'Content-Type': 'application/json' };
-    const fetchRes = await fetch(`http://localhost:8080/songwriter/${songwriter}`, settings);
+    const fetchRes = await fetch(`/songwriter/${songwriter}`, settings);
     const resJson = await fetchRes.json();
     setSwInfo(resJson);
   };
 
   const fetchBio = async () => {
     const settings = { method: 'GET', 'Content-Type': 'application/json' };
-    const fetchRes = await fetch(`http://localhost:8080/songwriter/${songwriter}/bio`, settings);
+    const fetchRes = await fetch(`/songwriter/${songwriter}/bio`, settings);
     const resJson = await fetchRes.json();
     setSwBio(resJson);
   };

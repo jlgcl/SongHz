@@ -34,7 +34,7 @@ const ArtistPage = () => {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     };
-    let fetchRes = await fetch(`http://localhost:8080/artist/${artistName}/bio`, settings);
+    let fetchRes = await fetch(`/artist/${artistName}/bio`, settings);
     let resJson = await fetchRes.json();
     setBio(resJson);
   };
@@ -44,7 +44,7 @@ const ArtistPage = () => {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     };
-    let fetchRes = await fetch(`http://localhost:8080/artist/${artistName}`, settings);
+    let fetchRes = await fetch(`/artist/${artistName}`, settings);
     let resJson = await fetchRes.json();
     setArtist([resJson]);
   };

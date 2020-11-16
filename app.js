@@ -6,6 +6,11 @@ var cors = require('cors')
 const multer = require('multer')
 const uploadImage = require('./helpers/helpers')
 const bodyParser = require('body-parser')
+const path = require('path')
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'client/build')))
+}
 
 // GCS setup
 const gc = require('./config/')

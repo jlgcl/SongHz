@@ -11,7 +11,7 @@ const SongsSpec = (props) => {
       method: 'GET',
     };
     try {
-      let fetchRes = await fetch(`http://localhost:8080/gcs/${artistName}`, settings);
+      let fetchRes = await fetch(`/gcs/${artistName}`, settings);
       let resJson = await fetchRes.json();
       resJson = resJson.slice(1);
       setSongs(resJson);
