@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ee25fb57.chunk.css",
+    "main.js": "/static/js/main.e08d63c5.chunk.js",
+    "main.js.map": "/static/js/main.e08d63c5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/js/2.0b6c1fcb.chunk.js": "/static/js/2.0b6c1fcb.chunk.js",
+    "static/js/2.0b6c1fcb.chunk.js.map": "/static/js/2.0b6c1fcb.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.0bd0a67c50c2ef6db4b2fa4243ff8dfa.js": "/precache-manifest.0bd0a67c50c2ef6db4b2fa4243ff8dfa.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.ee25fb57.chunk.css.map": "/static/css/main.ee25fb57.chunk.css.map",
+    "static/js/2.0b6c1fcb.chunk.js.LICENSE.txt": "/static/js/2.0b6c1fcb.chunk.js.LICENSE.txt",
+    "static/media/artist_page.css": "/static/media/Poppins-Regular.41e8dead.ttf",
+    "static/media/song_details.css": "/static/media/PassionOne-Regular.3fdbc807.ttf",
+    "static/media/artists.css": "/static/media/cp_poster.c40f38c7.jpg",
+    "static/media/Drawer.css": "/static/media/Oswald-VariableFont_wght.a6e5446a.ttf",
+    "static/media/Navbar.css": "/static/media/Pacifico-Regular.9b94499c.ttf",
+    "static/media/Footer.css": "/static/media/Staatliches-Regular.d5746e3b.ttf",
+    "static/media/ag.jpg": "/static/media/ag.057d92c4.jpg",
+    "static/media/ag_main.jpg": "/static/media/ag_main.0523faf6.jpg",
+    "static/media/bts.png": "/static/media/bts.c0f7f197.png",
+    "static/media/carousel.css": "/static/media/bts2.688df43e.png",
+    "static/media/bts_main.png": "/static/media/bts_main.fe7808ac.png",
+    "static/media/coldplay_main.jpg": "/static/media/coldplay_main.231520bd.jpg",
+    "static/media/cp.jpg": "/static/media/cp.91a2d51e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/js/2.0b6c1fcb.chunk.js",
+    "static/css/main.ee25fb57.chunk.css",
+    "static/js/main.e08d63c5.chunk.js"
+  ]
+}
