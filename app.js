@@ -8,15 +8,16 @@ const uploadImage = require('./helpers/helpers')
 const bodyParser = require('body-parser')
 const path = require('path')
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, './client/build')))
-}
-
 // GCS setup
 const gc = require('./config/')
 const bucket = gc.bucket('songhz')
 
 var app = express()
+
+// Deployment
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, './client/build')))
+}
 
 /// ROUTERS ///
 var artistRoutes = require('./routes/artistRoutes')
