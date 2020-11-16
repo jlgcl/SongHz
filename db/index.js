@@ -12,7 +12,7 @@ const devConfig = {
 }
 
 const proConfig = {
-    connectinoString: process.env.DATABASE_URL, // heroku addons
+    connectionString: process.env.DATABASE_URL, // heroku addons
 }
 
 const pool = new Pool(
