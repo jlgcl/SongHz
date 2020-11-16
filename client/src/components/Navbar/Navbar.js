@@ -21,7 +21,7 @@ const Navbar = (props) => (
             <a href="/songwriters">Songwriters</a>
           </li>
           <li>
-            <a href="/songs">Songs</a>
+            <a href="/song">Songs</a>
           </li>
           <li>
             <a href="/song_selector">Song Selector</a>
