@@ -45,7 +45,7 @@ function App() {
             <Route path="/songwriters">
               <Songwriters />
             </Route>
-            <Route path="/songs">
+            <Route path="/song">
               <Songs />
             </Route>
             <Route path="/song_selector">
