@@ -16,7 +16,7 @@ var app = express()
 
 // Deployment
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, './client/build')))
+    app.use(express.static(path.join(__dirname, 'client/build')))
 }
 
 /// ROUTERS ///
@@ -109,6 +109,10 @@ app.get('/gcs/:id', async (req, res) => {
     } catch (error) {
         console.log(error.message)
     }
+})
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/client/build/index.html'))
 })
 
 /// ---------- ERROR HANDLERS ---------- ///
