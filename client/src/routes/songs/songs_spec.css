@@ -34,4 +34,8 @@
     .song_photo {
         width: 90vw;
     }
+
+    .song {
+        padding: 15px;
+    }
 }

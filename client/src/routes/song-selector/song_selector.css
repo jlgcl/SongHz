@@ -110,6 +110,7 @@
 
     .selection {
         padding: 5px;
+        margin: 5px;
     }
 
     .selection-submit {
