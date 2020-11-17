@@ -4,7 +4,6 @@
 }
 
 .footer {
-    position: absolute;
     display: flex;
     height: 6vh;
     background-color: black;

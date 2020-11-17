@@ -1,13 +1,10 @@
 .songs_parent {
   background-color: #4d4e4e;
   width: 100vw;
-  height: 100%;
-  position: absolute;
-  bottom: 6vh;
-  overflow-y: scroll; }
+  bottom: 6vh; }
 
 .songs_header {
-  padding-top: 110px;
+  padding-top: 80px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -19,12 +16,12 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 2em;
+  margin-top: 1.5em;
   font: 30px poppins;
   color: white; }
 
 .songs_artist {
-  padding: 15px 0;
+  padding: 0.5px 0;
   margin: 0 30px;
   transition: color 1s ease;
   position: relative;
