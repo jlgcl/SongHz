@@ -38,4 +38,8 @@ img {
   background-repeat: no-repeat;
   background-position: center; }
 
+@media (max-width: 750px) {
+  img {
+    object-fit: center; } }
+
 /*# sourceMappingURL=carousel.css.map */

@@ -82,7 +82,11 @@ const SongSelector = () => {
     <Router>
       <div className="SongSelector-parent">
         <div className="SongSelector-header">What Do You Want to Listen to Today?</div>
-        <div className="SongSelector-subheader">Choose Max of 3 Selections</div>
+        <div className="SongSelector-subheader">
+          Choose Max of 3 Selections
+          <br />
+          Scroll down for results
+        </div>
         <div className="SongSelections">
           <div className="Activity">
             <div className="section-header">Activity</div>

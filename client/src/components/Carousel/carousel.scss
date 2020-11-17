@@ -35,7 +35,7 @@ img {
     margin: auto;
     width: 100vw;
     height: 94vh;
-    object-fit: cover
+    object-fit: cover;
 }
 
 .artist1, .artist2, .artist3 {
@@ -44,4 +44,10 @@ img {
     background-color: rgb(202, 137, 148);
     background-repeat: no-repeat;
     background-position: center;
+}
+
+@media(max-width: 750px) {
+    img {
+        object-fit: center;
+    }
 }

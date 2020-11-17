@@ -13,6 +13,8 @@
 }
 .SongSelector-subheader {
     margin-top: 20px;
+    font: 15px poppins;
+    text-align: center;
 }
 
 .SongSelections {
@@ -89,7 +91,7 @@
     }
 
     .SongSelector-header {
-        margin-top: 350px;
+        margin-top: 60px;
     }
     
     .SongSelector-subheader {
@@ -98,7 +100,7 @@
 
     .SongSelections {
         width: 100%;
-        margin-top: 100px;
+        margin-top: 80px;
     }
 
     .selection-content {
@@ -111,6 +113,6 @@
     }
 
     .selection-submit {
-        margin-top: 120px;
+        margin-top: 80px;
     }
 }
