@@ -83,12 +83,12 @@ const SongSelector = () => {
         <div className="SongSelector-header">What Do You Want to Listen to Today?</div>
         <div className="SongSelector-subheader">Choose Max of 3 Selections</div>
         <div className="SongSelections">
-          <Link to="/song_selector" style={{ textDecoration: 'none' }}>
-            <div className="Activity">
-              <div className="section-header">Activity</div>
-              <div className="selection-content">
-                {activitySelectors.map((selector, i) => {
-                  return (
+          <div className="Activity">
+            <div className="section-header">Activity</div>
+            <div className="selection-content">
+              {activitySelectors.map((selector, i) => {
+                return (
+                  <Link to="/song_selector" style={{ textDecoration: 'none' }}>
                     <div
                       key={selector}
                       className="selection"
@@ -98,15 +98,17 @@ const SongSelector = () => {
                     >
                       {selector}
                     </div>
-                  );
-                })}
-              </div>
+                  </Link>
+                );
+              })}
             </div>
-            <div className="Mood">
-              <div className="section-header">Mood</div>
-              <div className="selection-content">
-                {moodSelectors.map((selector, i) => {
-                  return (
+          </div>
+          <div className="Mood">
+            <div className="section-header">Mood</div>
+            <div className="selection-content">
+              {moodSelectors.map((selector, i) => {
+                return (
+                  <Link to="/song_selector" style={{ textDecoration: 'none' }}>
                     <div
                       key={selector}
                       className="selection"
@@ -116,15 +118,17 @@ const SongSelector = () => {
                     >
                       {selector}
                     </div>
-                  );
-                })}
-              </div>
+                  </Link>
+                );
+              })}
             </div>
-            <div className="Environment">
-              <div className="section-header">Environment</div>
-              <div className="selection-content">
-                {envSelectors.map((selector, i) => {
-                  return (
+          </div>
+          <div className="Environment">
+            <div className="section-header">Environment</div>
+            <div className="selection-content">
+              {envSelectors.map((selector, i) => {
+                return (
+                  <Link to="/song_selector" style={{ textDecoration: 'none' }}>
                     <div
                       key={selector}
                       className="selection"
@@ -134,11 +138,11 @@ const SongSelector = () => {
                     >
                       {selector}
                     </div>
-                  );
-                })}
-              </div>
+                  </Link>
+                );
+              })}
             </div>
-          </Link>
+          </div>
         </div>
         <Link to="/results">
           <button className="selection-submit">Generate Songs</button>
