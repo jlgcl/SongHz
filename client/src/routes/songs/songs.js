@@ -13,6 +13,7 @@ const Songs = () => {
   const [selectedSong, setSelectedSong] = useState(null);
   const [songPhoto, setSongPhoto] = useState(null);
   const [renderDetails, setRenderDetails] = useState(false);
+
   const setSongCallback = (songName, songPhoto) => {
     setSelectedSong(songName);
     setSongPhoto(songPhoto);
@@ -22,7 +23,6 @@ const Songs = () => {
     if (selectedSong !== null) setRenderDetails(true);
   };
   const viewDetailHandler = (e) => {
-    console.log(renderDetails);
     if (
       renderDetails &&
       e.target.className !== 'song_details' &&

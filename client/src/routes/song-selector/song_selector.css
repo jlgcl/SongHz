@@ -31,10 +31,6 @@
     padding: 5px;
 }
 
-.selection {
-    border: 1px solid;
-}
-
 .Activity, .Mood, .Environment {
     display: flex;
     flex-direction: column;
@@ -58,6 +54,7 @@
     border: 0.5px solid #bbbaba;
     border-radius: 25px;
     background-color: #f4f4f4;
+    text-decoration: none;
 }
 
 .selection:hover {
@@ -72,7 +69,7 @@
     border: none;
     width: 80%;
     margin: 25px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
