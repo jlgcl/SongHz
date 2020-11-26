@@ -11,5 +11,3 @@ js-standard-style
 * PERN - Postgres (all website data from Postgresql database), Express, React, Node
 * RESTful API
 * Google Cloud Storage
-
-# Demo
