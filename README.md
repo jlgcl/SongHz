@@ -8,9 +8,9 @@ SongHz - A Website for a Music Record Label Company.
 
 1. git clone/download the source files.
 2. npm install to install dependencies (@ both server & client directories).
-3. Start server: node ./bin/www (@ /explore_away) OR npm run devstart
-4. Import exploreaway.sql file to the local database
-5. Start client: npm start (@ /explore_away/client)
+3. Start server: node ./bin/www (@ /SongHz) OR npm run devstart
+4. Import songhzdb.sql file to the local database
+5. Start client: npm start (@ /SongHz/client)
 
 # Code Style
 js-standard-style
@@ -26,17 +26,17 @@ js-standard-style
 Homepage
 ![Homepage](./Snapshots/homepage.JPG?raw=true "homepage")
 
-Login
-![Login](./Snapshots/login.JPG?raw=true "login")
+Artist
+![artist1](./Snapshots/artist1.JPG?raw=true "artist1")
+![artist2](./Snapshots/artist2.JPG?raw=true "artist2")
 
-Search Map
-![Map](./Snapshots/searchmap.JPG?raw=true "map")
+Songs
+![songs](./Snapshots/songs.JPG?raw=true "songs")
 
-Social Media Posts
-![sns](./Snapshots/youtube.JPG?raw=true "sns")
+Songwriters
+![Songwriters](./Snapshots/songwriters.JPG?raw=true "Songwriters")
 
-Add Itinerary
-![add](./Snapshots/additinerary.JPG?raw=true "add")
-
-Itinerary
-![itinerary](./Snapshots/itinerary.JPG?raw=true "itinerary")
+Song Selector
+![songselector](./Snapshots/selector1.JPG?raw=true "songselector")
+![songselector](./Snapshots/selector2.JPG?raw=true "songselector")
+![songselector](./Snapshots/selector3.JPG?raw=true "songselector")
